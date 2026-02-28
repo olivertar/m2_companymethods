@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Orangecat CompanyMethods package.
+ *
+ * (c) Oliverio Gombert <olivertar@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Orangecat_CompanyMethods">
+        <sequence>
+            <module name="Orangecat_Company"/>
+            <module name="Magento_Payment"/>
+            <module name="Magento_Shipping"/>
+        </sequence>
+    </module>
+</config>

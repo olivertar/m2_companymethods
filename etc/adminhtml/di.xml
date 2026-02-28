@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Orangecat CompanyMethods package.
+ *
+ * (c) Oliverio Gombert <olivertar@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugin for DataProvider to load methods data -->
+    <type name="Orangecat\Company\Ui\Component\Form\Company\DataProvider">
+        <plugin name="append_company_sales_methods_data" type="Orangecat\CompanyMethods\Plugin\Ui\Component\Form\Company\DataProviderPlugin" sortOrder="20" />
+    </type>
+
+    <!-- Plugin on the repository to save methods data when the company is saved in the admin -->
+    <type name="Orangecat\Company\Api\CompanyRepositoryInterface">
+        <plugin name="save_company_sales_methods_data" type="Orangecat\CompanyMethods\Plugin\Api\CompanyRepositoryPlugin" sortOrder="20" />
+    </type>
+</config>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Orangecat CompanyMethods package.
+ *
+ * (c) Oliverio Gombert <olivertar@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <!-- Company Payment/Shipping Methods Table -->
+    <table name="mycompany_methods" resource="default" engine="innodb" comment="Company Payment and Shipping Methods">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="int" name="company_id" padding="10" unsigned="true" nullable="false" comment="Company ID"/>
+        <column xsi:type="varchar" name="method_type" length="20" nullable="false" comment="Method Type (payment or shipping)"/>
+        <column xsi:type="varchar" name="method_code" length="255" nullable="false" comment="Method Code"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MYCOMPANY_METHODS_COMPANY_ID_MYCOMPANY_ENTITY_ID" table="mycompany_methods" column="company_id" referenceTable="mycompany" referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="unique" referenceId="MYCOMPANY_METHODS_COMPANY_TYPE_CODE_UNIQUE">
+            <column name="company_id"/>
+            <column name="method_type"/>
+            <column name="method_code"/>
+        </constraint>
+    </table>
+
+</schema>

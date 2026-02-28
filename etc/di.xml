@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Orangecat CompanyMethods package.
+ *
+ * (c) Oliverio Gombert <olivertar@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Data Interfaces -->
+    <preference for="Orangecat\CompanyMethods\Api\Data\CompanyMethodsInterface" type="Orangecat\CompanyMethods\Model\CompanyMethods" />
+
+    <!-- Repositories -->
+    <preference for="Orangecat\CompanyMethods\Api\CompanyMethodsRepositoryInterface" type="Orangecat\CompanyMethods\Model\CompanyMethodsRepository" />
+
+    <!-- Plugin to filter payment methods in checkout -->
+    <type name="Magento\Payment\Model\MethodList">
+        <plugin name="company_filter_payment_methods" type="Orangecat\CompanyMethods\Plugin\Payment\PaymentMethodListPlugin" sortOrder="10" />
+    </type>
+
+    <!-- Plugin to filter shipping methods in checkout -->
+    <type name="Magento\Quote\Model\ShippingMethodManagement">
+        <plugin name="company_filter_shipping_methods" type="Orangecat\CompanyMethods\Plugin\Shipping\ShippingMethodManagementPlugin" sortOrder="10" />
+    </type>
+</config>
