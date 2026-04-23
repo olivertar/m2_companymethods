@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orangecat Company Methods - User Manual</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/logo_catorange.png">
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content">
+            <img src="img/logo_catorange.png" alt="OrangeCat" class="logo">
+            <div class="header-text">
+                <h1>OrangeCat Company Methods</h1>
+                <p>User Manual & Documentation</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Table of Contents -->
+        <h2 id="index">Table of Contents</h2>
+        <div class="toc">
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#admin-workflow">2. Admin Workflow: Assigning Methods</a></li>
+                <li><a href="#frontend-workflow">3. Frontend Workflow: Checkout Experience</a></li>
+            </ul>
+        </div>
+
+        <!-- 1. Introduction -->
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>The <strong>Orangecat Company Methods</strong> module extends the B2B capabilities of Magento 2 by allowing administrators to assign specific <strong>Payment</strong> and <strong>Shipping</strong> methods to individual companies.</p>
+            <p>This ensures that each company only sees the delivery and payment options that have been negotiated or authorized for them, providing a tailored purchasing experience for B2B clients.</p>
+        </section>
+
+        <!-- 2. Admin Workflow -->
+        <section id="admin-workflow">
+            <h2>2. Admin Workflow: Assigning Methods</h2>
+            <p>Administrators can manage the available methods for each company directly from the Company edit screen in the Magento Admin Panel.</p>
+            
+            <h3>2.1. Company Methods Assignment</h3>
+            <p>Navigate to <strong>Orangecat > Companies</strong>, edit a company, and locate the <strong>Sales Methods</strong> tab. Here you can select which payment and shipping methods are allowed for this specific company.</p>
+            
+            <img src="img/company_methods_assingnament.png" alt="Company Methods Assignment" class="screenshot">
+            <p class="caption">Figure 2.1: Assigning Payment and Shipping Methods to a Company</p>
+        </section>
+
+        <!-- 3. Frontend Workflow -->
+        <section id="frontend-workflow">
+            <h2>3. Frontend Workflow: Checkout Experience</h2>
+            <p>When a customer associated with a company proceeds to checkout, the system automatically filters the available methods based on the company's configuration.</p>
+
+            <h3>3.1. Filtered Delivery Methods</h3>
+            <p>Only the shipping methods assigned to the customer's company will be displayed during the shipping step of the checkout.</p>
+            <img src="img/company_methods_checkout_delivery.png" alt="Checkout Delivery Methods" class="screenshot">
+            <p class="caption">Figure 3.1: Delivery methods filtered by company settings</p>
+
+            <h3>3.2. Filtered Payment Methods</h3>
+            <p>Similarly, the payment step will only show the payment options that have been authorized for that company.</p>
+            <img src="img/company_methods_checkout_payments.png" alt="Checkout Payment Methods" class="screenshot">
+            <p class="caption">Figure 3.2: Payment methods filtered by company settings</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Orangecat. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

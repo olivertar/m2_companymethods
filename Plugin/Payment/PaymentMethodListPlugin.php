@@ -50,7 +50,7 @@ class PaymentMethodListPlugin
     public function afterGetAvailableMethods(
         MethodList $subject,
         array $result,
-        CartInterface $quote = null
+        ?CartInterface $quote = null
     ): array {
         if ($quote === null) {
             return $result;
