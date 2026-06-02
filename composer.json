@@ -1,22 +1,29 @@
 {
-    "name": "orangecat/module-company-payments-shipments",
-    "description": "Assign specific payment and shipping methods to B2B companies",
+    "name": "orangecat/module-company-methods",
+    "description": "Payment and shipping method restrictions per company for Magento 2 B2B",
+    "type": "magento2-module",
+    "license": ["OSL-3.0"],
+    "authors": [
+        {
+            "name": "Oliverio Gombert",
+            "email": "olivertar@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "keywords": ["magento2", "b2b", "company", "payment", "shipping", "orangecat"],
     "require": {
-        "php": "~8.1.0||~8.2.0||~8.3.0",
+        "php": ">=8.1",
         "magento/framework": "*",
         "magento/module-payment": "*",
+        "magento/module-quote": "*",
         "magento/module-shipping": "*",
+        "magento/module-store": "*",
+        "magento/module-ui": "*",
+        "orangecat/core": "*",
         "orangecat/module-company": "*"
     },
-    "type": "magento2-module",
-    "version": "1.0.0",
-    "license": [
-        "Proprietary"
-    ],
     "autoload": {
-        "files": [
-            "registration.php"
-        ],
+        "files": ["registration.php"],
         "psr-4": {
             "Orangecat\\CompanyMethods\\": ""
         }
